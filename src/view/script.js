@@ -13,56 +13,62 @@ async function fetchGaleria() {
 function rendergaleria(galeria) {
   galeriaDeFotos.innerHTML = "";
 
+  const rowDiv = document.createElement("div");
+  rowDiv.classList.add("row");
+
   galeria.forEach((foto) => {
-    const cardWrapper = document.createElement("div"); // Wrapper para cada card da galeria
-    cardWrapper.classList.add("card-wrapper");
+    const colDiv = document.createElement("div");
+    colDiv.classList.add("col-12", "col-sm-6", "col-md-3", "mt-3");
 
     const card = document.createElement("div");
     card.classList.add("card");
-    card.style.width = "18rem";
 
-    const fotoCell = document.createElement("div");
-    fotoCell.classList.add("card-body");
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("image-container");
 
     const imgElement = document.createElement("img");
     imgElement.src = foto.urlFoto;
     imgElement.alt = foto.descricao;
     imgElement.classList.add("card-img-top");
-    fotoCell.appendChild(imgElement);
 
-    const descricaoCell = document.createElement("p");
-    descricaoCell.textContent = foto.descricao;
-    descricaoCell.classList.add("card-text");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
 
-    const dataCell = document.createElement("p");
-    dataCell.textContent = foto.data;
-    dataCell.classList.add("card-date");
+    const descricaoDiv = document.createElement("div");
+    descricaoDiv.classList.add("description");
+    descricaoDiv.textContent = foto.descricao;
 
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("btn", "card-delete");
+    const dataDiv = document.createElement("div");
+    dataDiv.classList.add("date");
+    dataDiv.textContent = foto.data;
 
-    // Criar o elemento de ícone e adicionar a classe do ícone de lixeira
-    const deleteIcon = document.createElement("i");
-    deleteIcon.classList.add("fas", "fa-trash-alt");
+    overlay.appendChild(descricaoDiv);
+    overlay.appendChild(dataDiv);
 
-    // Adicionar o elemento de ícone como filho do botão
-    deleteButton.appendChild(deleteIcon);
+    const deleteButton = document.createElement("div");
+    deleteButton.classList.add("delete-btn");
+    deleteButton.textContent = "X";
 
     deleteButton.addEventListener("click", async () => {
       await deleteFoto(foto._id);
       init();
     });
 
-    fotoCell.appendChild(deleteButton);
-    fotoCell.appendChild(descricaoCell);
-    fotoCell.appendChild(dataCell);
+    imageContainer.appendChild(imgElement);
+    imageContainer.appendChild(overlay);
 
-    card.appendChild(fotoCell);
-    cardWrapper.appendChild(card); // Adicionar o card ao wrapper
+    card.appendChild(imageContainer);
+    card.appendChild(deleteButton);
 
-    galeriaDeFotos.appendChild(cardWrapper); // Adicionar o wrapper à galeria
+    colDiv.appendChild(card);
+
+    rowDiv.appendChild(colDiv);
   });
+
+  galeriaDeFotos.appendChild(rowDiv);
 }
+
+
 
 async function deleteFoto(fotoId) {
   try {
@@ -116,7 +122,6 @@ botao_add_foto.addEventListener("click", async () => {
   const data = input_data.value.trim();
   if (descricao) {
     const novaFoto = await adicionarFotos(urlFoto, descricao, data);
-    //rendergaleria([novaFoto]);
     init();
     input_descricao.value = "";
   }
