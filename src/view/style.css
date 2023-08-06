@@ -1,0 +1,17 @@
+.card-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.card-delete {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.classe-imagem{
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+  width: 100%; 
+}
