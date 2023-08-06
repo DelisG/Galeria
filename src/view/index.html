@@ -9,8 +9,8 @@
             rel="stylesheet"
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous">
-        <script defer src="teste.js"></script>
-        <link rel="stylesheet" href="teste.css">
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -18,29 +18,29 @@
     <body>
         <div class=" container d-flex justify-content-center align-items-center">
             <div class="content">
-                <div class="row">
-                    <div class="col mt-5">
-                        <div class="card p-1">
-                            <form onsubmit="return false;" >
-                                <h3 class="text-dark ">Adicionar fotos</h3>
-                                <input type="url" id="url-foto" class="form-control col-5"
-                                    placeholder="Insira a url da foto">
-                                <input type="text" id="descricao"
-                                    placeholder="Descrição da Foto"
-                                    class="form-control"
-                                    aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-lg">
-                                <input type="date" id="data" name="id"
-                                    class="form-control col-5">
-                                <button id="botao-add-foto" class="btn btn-dark ">Adicionar
-                                    </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div id="galeria-de-fotos" class="col-9 bg-link"></div>
+                <div class="row">                    
+                    <div id="galeria-de-fotos" class="col-12 bg-light"></div>
                 </div>
             </div>
         </div>
         
+        <div class="col mt-5">
+            <div class="card p-1">
+                <form onsubmit="return false;" >
+                    <h3 class="text-dark ">Adicionar fotos</h3>
+                    <input type="url" id="url-foto" class="form-control col-5"
+                        placeholder="Insira a url da foto">
+                    <input type="text" id="descricao"
+                        placeholder="Descrição da Foto"
+                        class="form-control"
+                        aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-lg">
+                    <input type="date" id="data" name="id"
+                        class="form-control col-5">
+                    <button id="botao-add-foto" class="btn btn-dark ">Adicionar
+                        </button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
