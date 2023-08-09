@@ -1,6 +1,5 @@
-## :pencil: Documentação Tecnica do projeto Galeria
+## :pencil: Documentação Tecnica do Projeto Galeria
 
-## Visão Geral do Projeto
 Combinando a flexibilidade do frontend e a eficiência do backend em Node.js, o Projeto Galeria é uma solução completa para gerenciamento de fotos. Sua interface amigável permite realizar operações CRUD, enquanto a integração com o banco de dados oferece uma organização impecável das fotos. A opção de adicionar e excluir fotos diretamente do site torna o processo de gerenciamento da galeria simples e rápido.  tornando-o uma solução completa e eficiente para gerenciamento das fotográficas com uma experiência amigável e intuitiva. 
 
 ## Tecnologias Utilizadas
@@ -173,6 +172,6 @@ git push origin nome-da-sua-branch
 <br>
 
 
-### :ribbon: Obrigada a você que chegou até aqui!:ribbon: 
+## :ribbon: Obrigada a você que chegou até aqui!:ribbon: 
 Espero que as informações aqui fornecidas tenham sido úteis e que você possa aproveitar ao máximo este projeto. Se você tiver alguma dúvida adicional, consulte a documentação do código ou entre em contato comigo pelo email: ***delisgmarques@gmail.com***
 
