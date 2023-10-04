@@ -1,6 +1,6 @@
 <div align="center"> 
 <h1>Projeto Galeria</h1>
-<img src="src/assets/mockup_galeria.png" width="700px">
+<img src="src/assets/galeria.png" width="700px">
 </div><br>
 
 
